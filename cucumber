@@ -1,0 +1,60 @@
+Bundler.require(:default, :test) <- maybe in a diff process?
+Capybara.default_driver = :rack_test
+
+steps_json = Cucumber::StepDefinitions.new.to_json
+steps_json = Cucumber::StepDefinitions.new(:autoload_code_paths => [features/step_definitions']).to_json
+
+irb
+---
+require 'bundler/setup'
+
+require 'rails'
+
+Bundler.require(:test)
+
+Capybara.default_driver = :rack_test <- this does not work the first time... Need to open it up and dissalow access
+
+steps_json = Cucumber::StepDefinitions.new.to_json
+
+rails
+---
+Bundler.require(:test)
+
+Capybara.default_driver = :rack_test
+
+configuration = Cucumber::Configuration.parse(Cucumber::Configuration.default)
+@support_code = Cucumber::Runtime::SupportCode.new(nil, false)
+
+files = configuration.autoload_code_paths.map { |path| Dir["#{path}/**/*"] }.flatten.reject{|path| path == 'features/support/extranet.rb'} # the reject should be configurable
+
+module Capybara
+  class << self
+    def default_driver
+      :rack_test
+    end
+  end
+end
+
+@support_code.load_files!(files)
+
+steps_json = Cucumber::StepDefinitions.new.to_json
+
+rails - in test
+---
+configuration = Cucumber::Configuration.parse(Cucumber::Configuration.default)
+@support_code = Cucumber::Runtime::SupportCode.new(nil, false)
+
+files = configuration.autoload_code_paths.map { |path| Dir["#{path}/**/*"] }.flatten.reject{|path| path == 'features/support/extranet.rb'} # the reject should be configurable
+
+module Capybara
+  class << self
+    def default_driver
+      :rack_test
+    end
+  end
+end
+
+@support_code.load_files!(files)
+
+steps_json = Cucumber::StepDefinitions.new.to_json
+
