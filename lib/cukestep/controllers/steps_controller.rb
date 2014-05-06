@@ -1,13 +1,11 @@
 module Cukestep
-  class Controller
-
-    def initialize
+  class StepsController < ActionController::Base
+    def index
       @support = Cukestep::Support.new.tap do |support|
         support.reset_driver
-        support.load_steps
       end
 
-      @support.steps.to_json
+      render :json => @support.steps.map(&:source).to_json
     end
   end
 end
