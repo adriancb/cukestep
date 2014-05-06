@@ -6,10 +6,8 @@ module Cukestep
         support.reset_driver
         support.load_steps
       end
-    end
 
-    def hydrate
-      Cucumber::StepDefinitions.new.to_json
+      @support.steps.to_json
     end
   end
 end
