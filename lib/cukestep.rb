@@ -9,6 +9,10 @@ module Cukestep
     @config ||= Configuration.new
   end
 
+  def self.config=(config)
+    @config = config
+  end
+
   def self.logger
     @logger ||= Logger.new(STDOUT).tap { |logger| logger.level = Logger::INFO }
   end

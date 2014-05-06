@@ -1,19 +1,15 @@
 module Cukestep
   class Controller
 
-    def hydrate
-      @support = Cukestep::Support.new
-
-      @support.reset_driver
-      @support.load_steps
-
-      steps.to_json
+    def initialize
+      @support = Cukestep::Support.new.tap do |support|
+        support.reset_driver
+        support.load_steps
+      end
     end
 
-    private
-
-    def steps
-      Cucumber::StepDefinitions.new
+    def hydrate
+      Cucumber::StepDefinitions.new.to_json
     end
   end
 end

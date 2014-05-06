@@ -58,3 +58,14 @@ end
 
 steps_json = Cucumber::StepDefinitions.new.to_json
 
+config
+------
+class CukestepConfig < Cukestep::Configuration
+  def excluded_code_file_paths
+    ['features/support/extranet.rb']
+  end
+end
+
+Cukestep.config = CukestepConfig.new
+
+controller = Cukestep::Controller.new

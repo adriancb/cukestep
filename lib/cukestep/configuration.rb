@@ -2,11 +2,11 @@ module Cukestep
   class Configuration
 
     def autoload_code_paths
-      ['features/step_definitions']
+      ['features/support', 'features/step_definitions']
     end
 
     def excluded_code_file_paths
-      ['features/support/extranet.rb']
+      []
     end
 
     def cucumber_load_paths
