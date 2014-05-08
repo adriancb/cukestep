@@ -6,6 +6,7 @@ module Cukestep
       @capybara_support = capybara_support
 
       load_files!
+      reset_driver!
     end
 
     def load_files!
@@ -16,7 +17,7 @@ module Cukestep
       @steps = @cucumber_support.step_definitions.map { |stepdef| stepdef.to_hash }
     end
 
-    def reset_driver
+    def reset_driver!
       @capybara_support.reset_driver
     end
 

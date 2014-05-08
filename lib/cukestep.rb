@@ -1,5 +1,5 @@
 module Cukestep
-  autoload :Engine,        "cukestep/engine"
+  autoload :Engine,        "cukestep/rails"
   autoload :Support,       "cukestep/support"
   autoload :Capybara,      "cukestep/capybara"
   autoload :Configuration, "cukestep/configuration"
