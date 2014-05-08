@@ -1,7 +1,7 @@
 module Cukestep
   class Capybara
 
-    def reset_driver
+    def reset_driver!
       ::Capybara.module_eval(monkey_patch_default_driver)
     end
 

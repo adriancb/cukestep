@@ -10,11 +10,14 @@ end
 
 module Cukestep
   class StepsController < ActionController::Base
-    def index
-      @support ||= Cukestep::Support.new
-      @steps   ||= @support.steps.map {|step| step["source"] }
 
-      render :json => @steps.select { |step| /#{params[:q]}/.match(step) }.to_json, :callback => params["callback"]
+    def index
+      render :json => steps.select { |step| /#{params[:q]}/i.match(step) }.to_json, :callback => params["callback"]
     end
+
+    def steps
+      @steps ||= Cukestep::Support.new.steps
+    end
+
   end
 end

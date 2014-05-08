@@ -1,6 +1,6 @@
 # Cukestep
 
-TODO: Write a gem description
+Cukestep exposes your system's Gherkin steps to the outside world through a Rails Engine.
 
 ## Installation
 
@@ -18,7 +18,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+# Mount the engine
+
+    mount Cukestep::Engine => "/cukestep", as: "cukestep"
+
+# Start your Rails application and navigate to
+
+    /cukestep/steps
+
 
 ## Contributing
 
