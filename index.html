@@ -34,13 +34,13 @@
     <script>
       var AtWho = AtWho || {};
 
-      AtWho.init = function ($selector) {
+      AtWho.init = function ($field, $url) {
          $.ajax({
-            url: 'http://localhost:9292/cukestep/steps',
+            url: ($url === undefined) ? 'http://localhost:9292/cukestep/steps' : $url.val(),
             dataType: "jsonp",
             data: {},
             success: function (data) {
-              $selector.atwho({
+              $field.atwho({
                   at: ":",
                   data: data
               })
@@ -52,13 +52,16 @@
         $selector.atwho('destroy');
       };
 
-      $('#configuration').change(function () {
-        AtWho.destroy($('#description'));
-        AtWho.init($('#description'));
+      var $description = $('#description');
+      var $url = $('#configuration');
+
+      $url.change(function () {
+        AtWho.destroy($description);
+        AtWho.init($description, $(this));
       });
 
 
-      AtWho.init($('#description'));
+      AtWho.init($description);
 
     </script>
 
