@@ -12,7 +12,7 @@ module Cukestep
   class StepsController < ActionController::Base
 
     def index
-      render :json => steps.select { |step| /#{params[:q]}/i.match(step) }.to_json, :callback => params["callback"]
+      render :json => steps.to_json, :callback => params["callback"]
     end
 
     def steps
