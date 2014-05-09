@@ -18,13 +18,22 @@ Or install it yourself as:
 
 ## Usage
 
-# Mount the engine
+### Mount the engine
 
     mount Cukestep::Engine => "/cukestep", as: "cukestep"
 
-# Start your Rails application and navigate to
+### Start your Rails application and navigate to
 
     /cukestep/steps
+
+### Pivotal Tracker
+
+Inject `/assets/bookmarklet.js` in your browser to decorate the Pivotal Tracker story description field.
+
+Note: Pivotal Tracker runs using SSL. In order to test locally, run Charles, map https->http, configure SSL proxying and visit the endpoint URL in the browser to accept the SSL certification restriction.
+
+### Example
+
 
 
 ## Contributing
