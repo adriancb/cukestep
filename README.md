@@ -36,6 +36,20 @@ Note: Pivotal Tracker runs using SSL. In order to test locally, run Charles, map
 
 ![Pivotal Tracker CUkestep Example](http://cl.ly/image/1h0K0X2x2126/pivotal_tracker_cukestep_example.png)
 
+### Configuration
+
+To exclude a support file from the autoload path, create an initializer class and redefine `excluded_code_file_paths`.
+
+```ruby
+class CukestepConfig < Cukestep::Configuration
+  def excluded_code_file_paths
+    ['features/support/extranet.rb']
+  end
+end
+
+Cukestep.config = CukestepConfig.new
+```
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/cukestep/fork )

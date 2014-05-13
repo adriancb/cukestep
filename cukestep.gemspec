@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Adrian CB"]
   spec.email         = ["ab.....@gmail.com"]
   spec.summary       = %q{Expose your Gherkin steps to the world.}
-  spec.description   = %q{Cukestep exposes your system's Gherkin steps through a Rails Engine.}
+  spec.description   = %q{Cukestep exposes your system's Gherkin steps through a Rails Engine. It comes coupled with a javascript scriptlet that decorates any input field with autocomplete (the gherkin steps) functionality.}
   spec.homepage      = "https://github.com/adriancb/cukestep"
   spec.license       = "MIT"
 
