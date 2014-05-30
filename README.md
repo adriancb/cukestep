@@ -32,9 +32,10 @@ Inject `/assets/bookmarklet.js` in your browser to decorate the Pivotal Tracker 
 
 Note: Pivotal Tracker runs using SSL. In order to test locally, run Charles, map https->http, configure SSL proxying and visit the endpoint URL in the browser to accept the SSL certification restriction.
 
-### Example
+### Examples
 
-![Pivotal Tracker CUkestep Example](http://cl.ly/image/1h0K0X2x2126/pivotal_tracker_cukestep_example.png)
+![Pivotal Tracker Cukestep Example](http://cl.ly/Vox0/pivotal_tracker_cukestep_example.png.png)
+![Trello Cukestep Example](http://cl.ly/VpE7/trello_cukestep_example.png.png)
 
 ### Configuration
 
