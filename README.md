@@ -35,6 +35,7 @@ Note: Pivotal Tracker runs using SSL. In order to test locally, run Charles, map
 ### Examples
 
 ![Pivotal Tracker Cukestep Example](http://cl.ly/Vox0/pivotal_tracker_cukestep_example.png.png)
+
 ![Trello Cukestep Example](http://cl.ly/VpE7/trello_cukestep_example.png.png)
 
 ### Configuration
