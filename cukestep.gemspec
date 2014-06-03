@@ -22,6 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
 
   spec.add_dependency "rails"
+  spec.add_dependency "capybara"
   spec.add_dependency "cucumber"
   spec.add_dependency "cucumber-rails"
 end
