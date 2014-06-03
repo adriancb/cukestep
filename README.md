@@ -27,13 +27,15 @@ Or install it yourself as:
 
     /cukestep/steps
 
+At this point - you should be seeing a JSON output of your Gherkin steps.
+
 ### Pivotal Tracker and Trello
 
-Inject [example/assets/bookmarklet.js](https://github.com/adriancb/cukestep/blob/master/example/assets/bookmarklet.js) as a bookmarklet in your browser to decorate the Pivotal Tracker story/Trello description field.
+Modify `Cukestep.url =` within [example/assets/bookmarklet.js](https://github.com/adriancb/cukestep/blob/master/example/assets/bookmarklet.js) and change the URL to point to your local development environment. For production, modify the URL to point to your production server.
 
 Note: Pivotal Tracker and Trello run on SSL. In order to test locally, run Charles, map https->http, configure SSL proxying and visit the endpoint URL in the browser to accept the SSL certification restriction.
 
-### Examples
+### Examples - Pivotal Tracker and Trello
 
 ![Pivotal Tracker Cukestep Example](http://cl.ly/Vox0/pivotal_tracker_cukestep_example.png.png)
 
