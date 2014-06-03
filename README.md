@@ -26,11 +26,11 @@ Or install it yourself as:
 
     /cukestep/steps
 
-### Pivotal Tracker
+### Pivotal Tracker and Trello
 
-Inject `/assets/bookmarklet.js` in your browser to decorate the Pivotal Tracker story description field.
+Inject `/assets/bookmarklet.js` as a bookmarklet in your browser to decorate the Pivotal Tracker story/Trello description field.
 
-Note: Pivotal Tracker runs using SSL. In order to test locally, run Charles, map https->http, configure SSL proxying and visit the endpoint URL in the browser to accept the SSL certification restriction.
+Note: Pivotal Tracker and Trello run on SSL. In order to test locally, run Charles, map https->http, configure SSL proxying and visit the endpoint URL in the browser to accept the SSL certification restriction.
 
 ### Examples
 
