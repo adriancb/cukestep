@@ -20,6 +20,7 @@ Or install it yourself as:
 
 ### Mount the engine
 
+    # routes.rb
     mount Cukestep::Engine => "/cukestep", as: "cukestep"
 
 ### Start your Rails application and navigate to
@@ -28,7 +29,7 @@ Or install it yourself as:
 
 ### Pivotal Tracker and Trello
 
-Inject `/assets/bookmarklet.js` as a bookmarklet in your browser to decorate the Pivotal Tracker story/Trello description field.
+Inject [example/assets/bookmarklet.js](https://github.com/adriancb/cukestep/blob/master/example/assets/bookmarklet.js) as a bookmarklet in your browser to decorate the Pivotal Tracker story/Trello description field.
 
 Note: Pivotal Tracker and Trello run on SSL. In order to test locally, run Charles, map https->http, configure SSL proxying and visit the endpoint URL in the browser to accept the SSL certification restriction.
 
@@ -43,6 +44,7 @@ Note: Pivotal Tracker and Trello run on SSL. In order to test locally, run Charl
 To exclude a support file from the autoload path, create an initializer class and redefine `excluded_code_file_paths`.
 
 ```ruby
+# #{Rails.root}/config/initializers/cukestep_config.rb
 class CukestepConfig < Cukestep::Configuration
   def excluded_code_file_paths
     ['features/support/extranet.rb']
