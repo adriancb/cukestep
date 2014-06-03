@@ -1,3 +1,5 @@
+require 'capybara'
+
 module Cukestep
   class Capybara
 

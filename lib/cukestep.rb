@@ -7,10 +7,14 @@ module Cukestep
   autoload :VERSION,       "cukestep/version"
 
   def self.config
-    @config ||= Configuration.new
+    @config ||= Configuration.default_configuration
   end
 
   def self.config=(config)
     @config = config
+  end
+
+  def self.configure
+    yield config if block_given?
   end
 end

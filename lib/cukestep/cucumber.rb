@@ -1,3 +1,5 @@
+require 'cucumber'
+
 module Cukestep
   class Cucumber
 

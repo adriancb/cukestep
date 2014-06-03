@@ -33,17 +33,13 @@ At this point - you should be seeing a JSON output of your Gherkin steps.
 
 *Rails*
 
-To exclude a support file from the autoload path, create an initializer class and redefine `excluded_code_file_paths`.
+To exclude a support file from the autoload path, create an initializer class and tell Cukestep which files to exclude.
 
 ```ruby
 # #{Rails.root}/config/initializers/cukestep_config.rb
-class CukestepConfig < Cukestep::Configuration
-  def excluded_code_file_paths
-    ['features/support/extranet.rb']
-  end
+Cukestep.configure do |c|
+  c.excluded_code_file_paths = ['features/support/extranet.rb']
 end
-
-Cukestep.config = CukestepConfig.new
 ```
 
 *Browser*

@@ -1,16 +1,16 @@
 module Cukestep
   class Configuration
 
-    def autoload_code_paths
-      ['features/support', 'features/step_definitions']
-    end
+    attr_accessor :autoload_code_paths
+    attr_accessor :default_excluded_file_paths
+    attr_accessor :excluded_code_file_paths
 
-    def default_excluded_file_paths
-      ['features/support/env.rb']
-    end
-
-    def excluded_code_file_paths
-      []
+    def self.default_configuration
+      Configuration.new.tap do |c|
+        c.autoload_code_paths = ['features/support', 'features/step_definitions']
+        c.default_excluded_file_paths = ['features/support/env.rb']
+        c.excluded_code_file_paths = []
+      end
     end
 
     def cucumber_load_paths
