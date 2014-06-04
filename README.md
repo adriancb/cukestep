@@ -4,17 +4,7 @@ Cukestep exposes your system's Gherkin steps to the outside world through a Rail
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'cukestep'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install cukestep
+You know how...
 
 ## Usage
 
@@ -64,8 +54,4 @@ Cukestep makes heavy use of [At.js](https://github.com/ichord/At.js).
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/cukestep/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+You know how...
